@@ -4,7 +4,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 		let parser = new DOMParser();
 		let doc = parser.parseFromString(msg.html, 'text/html');
 		let tc = doc.getElementById('bar').textContent;
-		let reply = {};
 		sendResponse(tc)
 	}
 })
