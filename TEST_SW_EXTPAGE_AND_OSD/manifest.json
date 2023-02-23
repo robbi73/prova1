@@ -1,0 +1,21 @@
+{
+	"manifest_version": 3,
+	"name": "Test OSD, EXTPage & SW",
+	"short_name": "XXX",
+	"version": "0.0.0.1",
+	"description": "Questa estensione mi permette di testare...",
+	"background": {
+		"service_worker": "worker_wrapper.js"
+	},
+	"chrome_url_overrides": { "newtab": "newpage.html" },
+	"action": {
+		"default_icon": {
+			"128": "img/ico128.png",
+			"16": "img/ico16.png"
+		}
+	},
+	"permissions": [
+		"offscreen",
+		"storage"
+	]
+}
