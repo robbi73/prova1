@@ -10,9 +10,9 @@ function OSCreateDocument(u, j, r) {
 }
 
 async function openOSD() {
+	var e = '<table><tr><td>foo</td><td id="bar">bar</td></tr><table>';
 	await OSCreateDocument('osd.html', 'ignored', ['DOM_PARSER']);	/* I open the OSD */
-	var e = '<table><tr><td>foo</td><td id="bar">bar</td></tr><table>'
-	let reply = await chrome.runtime.sendMessage({'cmd': 'DOMParser', 'html': e});	/* I send my message */
+	var reply = await chrome.runtime.sendMessage({'cmd': 'DOMParser', 'html': e});	/* I send my message */
 	chrome.offscreen.closeDocument()	/* I close the document without waiting */
 	console.log(reply)
 }
